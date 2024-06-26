@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body class="bg-neutral-900">
+    <main class="container mx-auto my-32">
+      <div
+        class="w-full flex justify-between items-center bg-neutral-700 px-6 py-3 mb-6 shadow-md sm:rounded-lg"
+      >
+        <p class="text-neutral-400 uppercase font-bold">Welcome Admin</p>
+        <a
+          href="/public/create.html"
+          class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-9 py-2.5 focus:outline-none focus:ring-blue-800"
+          >Add Product</a
+        >
+      </div>
+
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table
+          class="table-auto w-full text-sm text-left rtl:text-right text-neutral-400"
+        >
+          <thead class="text-xs text-neutral-400 uppercase bg-neutral-700">
+            <tr>
+              <th scope="col" class="px-6 py-3">Product name</th>
+              <th scope="col" class="px-6 py-3">Brand</th>
+              <th scope="col" class="px-6 py-3">Category</th>
+              <th scope="col" class="px-6 py-3">Quantity</th>
+              <th scope="col" class="px-6 py-3">Price</th>
+              <th scope="col" class="px-6 py-3 min-w-64">Notes</th>
+              <th scope="col" class="px-6 py-3">
+                <span class="sr-only">Actions</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="bg-neutral-800 border-b border-neutral-700 hover:bg-neutral-600"
+            >
+              <th
+                scope="row"
+                class="px-6 py-3 font-medium text-white whitespace-nowrap"
+              >
+                MacBook Pro 17"
+              </th>
+              <td class="px-6 py-3">Apple</td>
+              <td class="px-6 py-3">PC</td>
+              <td class="px-6 py-3">20</td>
+              <td class="px-6 py-3">$2999</td>
+              <td class="px-6 py-3">Not sell to the public yet</td>
+              <td class="px-6 py-3">
+                <div class="flex gap-1 justify-end">
+                  <button
+                    type="button"
+                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none focus:ring-blue-800"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    type="button"
+                    class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:ring-red-900"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="bg-neutral-800 border-b border-neutral-700 hover:bg-neutral-600"
+            >
+              <th
+                scope="row"
+                class="px-6 py-4 font-medium text-white whitespace-nowrap"
+              >
+                Surface Pro
+              </th>
+              <td class="px-6 py-4">Microsoft</td>
+              <td class="px-6 py-4">PC</td>
+              <td class="px-6 py-4">5</td>
+              <td class="px-6 py-4">$1999</td>
+              <td class="px-6 py-4"></td>
+              <td class="px-6 py-4">
+                <div class="flex gap-1 justify-end">
+                  <button
+                    type="button"
+                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none focus:ring-blue-800"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    type="button"
+                    class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:ring-red-900"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="bg-neutral-800 border-b border-neutral-700 hover:bg-neutral-600"
+            >
+              <th
+                scope="row"
+                class="px-6 py-4 font-medium text-white whitespace-nowrap"
+              >
+                Magic Mouse 2
+              </th>
+              <td class="px-6 py-4">Razer</td>
+              <td class="px-6 py-4">Accessories</td>
+              <td class="px-6 py-4">100</td>
+              <td class="px-6 py-4">$99</td>
+              <td class="px-6 py-4"></td>
+              <td class="px-6 py-4">
+                <div class="flex gap-1 justify-end">
+                  <button
+                    type="button"
+                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none focus:ring-blue-800"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    type="button"
+                    class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:ring-red-900"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
