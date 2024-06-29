@@ -36,21 +36,31 @@
               </th>
             </tr>
           </thead>
-          <tbody>
-            <tr
-              class="bg-neutral-800 border-b border-neutral-700 hover:bg-neutral-600"
-            >
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+    <script>
+      fetch("/products")
+        .then((response) => response.json())
+        .then((data) => {
+          const products = data;
+          const productsContainer = document.querySelector("tbody");
+          products.forEach((product) => {
+            const productElement = document.createElement("tr");
+            productElement.classList.add("bg-neutral-800", "border-b", "border-neutral-700", "hover:bg-neutral-600");
+            productElement.innerHTML = `
               <th
                 scope="row"
                 class="px-6 py-3 font-medium text-white whitespace-nowrap"
               >
-                MacBook Pro 17"
+                ${product.name}
               </th>
-              <td class="px-6 py-3">Apple</td>
-              <td class="px-6 py-3">PC</td>
-              <td class="px-6 py-3">20</td>
-              <td class="px-6 py-3">$2999</td>
-              <td class="px-6 py-3">Not sell to the public yet</td>
+              <td class="px-6 py-3">${product.brand}</td>
+              <td class="px-6 py-3">${product.category}</td>
+              <td class="px-6 py-3">${product.stock}</td>
+              <td class="px-6 py-3">${product.price}</td>
+              <td class="px-6 py-3">${product.notes ? product.notes : ""}</td>
               <td class="px-6 py-3">
                 <div class="flex gap-1 justify-end">
                   <button
@@ -66,73 +76,10 @@
                     Delete
                   </button>
                 </div>
-              </td>
-            </tr>
-            <tr
-              class="bg-neutral-800 border-b border-neutral-700 hover:bg-neutral-600"
-            >
-              <th
-                scope="row"
-                class="px-6 py-4 font-medium text-white whitespace-nowrap"
-              >
-                Surface Pro
-              </th>
-              <td class="px-6 py-4">Microsoft</td>
-              <td class="px-6 py-4">PC</td>
-              <td class="px-6 py-4">5</td>
-              <td class="px-6 py-4">$1999</td>
-              <td class="px-6 py-4"></td>
-              <td class="px-6 py-4">
-                <div class="flex gap-1 justify-end">
-                  <button
-                    type="button"
-                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none focus:ring-blue-800"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    type="button"
-                    class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:ring-red-900"
-                  >
-                    Delete
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr
-              class="bg-neutral-800 border-b border-neutral-700 hover:bg-neutral-600"
-            >
-              <th
-                scope="row"
-                class="px-6 py-4 font-medium text-white whitespace-nowrap"
-              >
-                Magic Mouse 2
-              </th>
-              <td class="px-6 py-4">Razer</td>
-              <td class="px-6 py-4">Accessories</td>
-              <td class="px-6 py-4">100</td>
-              <td class="px-6 py-4">$99</td>
-              <td class="px-6 py-4"></td>
-              <td class="px-6 py-4">
-                <div class="flex gap-1 justify-end">
-                  <button
-                    type="button"
-                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none focus:ring-blue-800"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    type="button"
-                    class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:ring-red-900"
-                  >
-                    Delete
-                  </button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
+              </td>`;
+            productsContainer.appendChild(productElement);
+          });
+        });
+    </script>
   </body>
 </html>
