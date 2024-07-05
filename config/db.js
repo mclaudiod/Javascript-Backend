@@ -1,10 +1,10 @@
 import { createPool } from "mysql2/promise";
 
 const pool = createPool({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "javascript_backend",
+  host: process.env.MYSQL_ADDON_HOST,
+  user: process.env.MYSQL_ADDON_USER,
+  password: process.env.MYSQL_ADDON_PASSWORD,
+  database: process.env.MYSQL_ADDON_DB,
   waitForConnections: true,
   connectionLimit: 5,
 });
@@ -16,7 +16,10 @@ pool
     console.log("Database connected.");
   })
   .catch((err) => {
-    console.error("There has been an error while connecting to the database:", err);
+    console.error(
+      "There has been an error while connecting to the database:",
+      err
+    );
   });
 
 export default pool;
